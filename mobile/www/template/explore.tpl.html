@@ -1,0 +1,29 @@
+<div class="page-header">
+    <div class="titre">
+        <h1>Explore !</h1>
+    </div>
+    <div class="info">
+        <p>Cherche de nouvelles insiprations pour ton prochain voyage</p>
+    </div>
+</div>
+
+<div id="results-section">
+    <h2 class="mb-3">Voyages à découvrir</h2>
+    <div id="results-container" class="results-scroll">
+        {{#.}}
+        <div class="travel-results" data-code={{code}}>
+            <img src="{{photos.0.text}}{{^photos.0.text}}img/default.jpeg{{/photos.0.text}}" alt={{title}}>
+            <div class="travel-results-title">{{title}}</div>
+        </div>
+        {{/.}}
+    </div>
+
+</div>
+<div id="map-container" style="width: 100%;
+    height:40vh;
+    margin-top: 2vh;
+    position: relative;
+    ">
+    <div id="map4" style="width: 100%;
+    height: 100%;"></div>
+</div>

@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'Stem-Light';
+  src: url('Stem-Light.otf') format('opentype'), url('Stem-Light.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.stem-light {
+    font-family: 'Stem-Light';
+}
+
+@font-face {
+  font-family: 'Stem-BoldItalic';
+  src: url('Stem-BoldItalic.otf') format('opentype'), url('Stem-BoldItalic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.stem-bolditalic {
+    font-family: 'Stem-BoldItalic';
+}

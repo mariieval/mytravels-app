@@ -1,0 +1,6 @@
+{
+    "require": {
+        "bshaffer/oauth2-server-php": "^1.12",
+        "vlucas/phpdotenv": "^5.6"
+    }
+}

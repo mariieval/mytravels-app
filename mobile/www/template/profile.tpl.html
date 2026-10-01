@@ -1,0 +1,24 @@
+<div class="page-header">
+  <div class="titre">
+    <h1>Mon profil</h1>
+  </div>
+  <div class="info">
+    <p>Consulte tes informations personnelles</p>
+  </div>
+</div>
+{{#.}}
+<div class="profile-card">
+  <div class="profile-header">
+    <img src="img/profile.jpg" alt="Profile picture">
+    <h2 id="username">{{username}}</h2>
+  </div>
+
+  <div class="profile-info">
+    <p><span>Email :</span> <br> <span id="email">{{email}}</span></p>
+    <p><span>Voyages créés :</span> <span id="travels-created">{{travels_created}}</span></p>
+    <p><span>Voyages sauvegardés :</span> <span id="travels-saved">{{travels_saved}}</span></p>
+  </div>
+
+  <button id="disconnect" class="disconnect-btn">Se déconnecter</button>
+</div>
+{{/.}}

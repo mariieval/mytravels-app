@@ -1,0 +1,82 @@
+    <div class="row justify-content-between">
+        <div class="col-6">
+            <a>
+                <img src="svg/return.svg" class="button-top-left" style="height:5vh;" alt="close button"
+                    id="return-button" />
+            </a>
+        </div>
+        <div class="col-6">
+            <a class="float-end">
+                <img id="add-to-favorites" class="button-top-right" src="svg/save.svg" style="height:5vh;"
+                    alt="save button" />
+            </a>
+        </div>
+        <div class="col-6" id="remove-from-favorites">
+            <a class="float-end">
+                <img class="button-top-right" src="svg/saved.svg" style="height:5vh;" alt="save button" />
+            </a>
+        </div>
+    </div>
+
+    <div id="map3" style="width: 100vw;
+    height:50vh;
+    z-index:1;
+    padding: 2vw;">
+    </div>
+
+    {{#.}}
+    <div class="all-info-container">
+        <h1 class="title">{{title}}</h1>
+        <p>{{summary}}</p>
+        <p>Durée du voyage: {{days}} jours</p>
+        </br>
+        <p style="font-style: italic; color: grey;"> Créé le {{date}} par {{user}}</p>
+    </div>
+
+
+    <div class="container my-4">
+        <div class="row g-3">
+            {{#photos}}
+            <div class="col-6 col-md-3">
+                <div class="gallery-item" data-code="{{text}}">
+                    <img src={{text}} alt="..." class="img-fluid rounded shadow-sm">
+                </div>
+            </div>
+            {{/photos}}
+        </div>
+    </div>
+
+    <div class="modal fade" id="image-display" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body" style="margin:0; padding:0; text-align:center">
+                    <a>
+                        <img src="svg/close.svg" class="button-top-right" style="height:5vh;" alt="close button"
+                            data-bs-dismiss="modal" aria-label="Close" />
+                    </a>
+                    <img id="displayed-image" src="" alt="..." class="img-fluid rounded shadow-sm">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{/.}}
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="../node_modules/ol/dist/ol.js"></script>
+    <script src="https://unpkg.com/maplibre-gl@^5.9.0/dist/maplibre-gl.js"></script>
+    <script type="text/javascript" src="js/mustache.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/oauth.js"></script>
+
+    <script type="text/javascript" src="js/googlemapsgeocoding.js"></script>
+
+    <script type="text/javascript" src="js/app-cordova.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,6 @@
+window.APP_CONFIG = {
+    apiBaseUrl: "http://localhost:8080",
+    oauthClientId: "your-client-id",
+    oauthClientSecret: "your-client-secret",
+    googleMapsApiKey: "your-google-maps-api-key"
+};

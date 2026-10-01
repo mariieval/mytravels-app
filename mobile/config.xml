@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.polytechnique.projet2" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>MyTravels</name>
+    <description>Discover and share travel itineraries.</description>
+    <author>
+        MyTravels contributors
+    </author>
+    <content src="index.html" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <platform name="android">
+        <icon src="icons/mipmap-mdpi/ic-launcher.png" density="mdpi"/>
+        <icon src="icons/mipmap-hdpi/ic-launcher.png" density="hdpi"/>
+        <icon src="icons/mipmap-xhdpi/ic-launcher.png" density="xhdpi"/>
+        <icon src="icons/mipmap-xxhdpi/ic-launcher.png" density="xxhdpi"/>
+        <icon src="icons/mipmap-xxxhdpi/ic-launcher.png" density="xxxhdpi"/>
+    </platform>
+</widget>

@@ -1,0 +1,12 @@
+# Local frontend configuration
+mobile/www/js/config.js
+
+# PHP dependencies and local environment
+api/vendor/
+api/.env
+
+# Runtime and editor files
+*.log
+.DS_Store
+Thumbs.db
+.vscode/

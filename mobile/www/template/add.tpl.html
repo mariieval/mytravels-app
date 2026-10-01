@@ -1,0 +1,209 @@
+    <div class="row justify-content-between">
+        <div class="col-6">
+            <a>
+                <img src="svg/close.svg" class="button-top-left" style="height:5vh;" alt="close button"
+                    id="close-button" data-bs-toggle="modal" data-bs-target="#closeButtonTrigger" />
+            </a>
+        </div>
+        <div class="col-6">
+            <a class="float-end" id="save-button" data-bs-toggle="modal" data-bs-target="#saveButtonTrigger">
+                <img class="button-top-right" src="svg/check.svg" style="height:5vh;" alt="save button" />
+            </a>
+        </div>
+    </div>
+
+    <div id="map" style="width: 100vw;
+    height:40vh;
+    z-index:1;
+    padding: 2vw;">
+    </div>
+
+    <div class="add-container">
+
+        <div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Nom du voyage</label>
+                <input type="email" class="form-control" id="title" placeholder="Nom du voyage">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                <textarea class="form-control" id="summary" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput2" class="form-label">Durée du voyage (en jours)</label>
+                <input type="number" class="form-control" id="duree-voyage" min="0" step="1">
+                <div class="invalid-feedback">
+                    Entrer un nombre de jours valide.
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-6">
+                <button
+                    class="btn btn-light btn-lg d-flex align-items-center shadow-sm border rounded-pill px-4 py-2 social-btn"
+                    data-bs-toggle="modal" data-bs-target="#searchLocation2" id="addStart"
+                    onclick="sessionStorage['whichloc']='start'">
+                    <img src="svg/plusblack.svg" alt="Plus" style="width:24px; height:24px;" class="me-3" />
+                    <span class="">Ajouter un point de départ</span>
+                </button>
+            </div>
+            <div class="col-6">
+                <button
+                    class="btn btn-light btn-lg d-flex align-items-center shadow-sm border rounded-pill px-4 py-2 social-btn"
+                    data-bs-toggle="modal" data-bs-target="#searchLocation2" id="addStop"
+                    onclick="sessionStorage['whichloc']='stop'">
+                    <img src="svg/plusblack.svg" alt="Plus" style="width:24px; height:24px;" class="me-3" />
+                    <span class="">Ajouter un arrêt</span>
+                </button>
+            </div>
+        </div>
+
+        </br>
+        <button
+            class="btn btn-light btn-lg d-flex align-items-center shadow-sm border rounded-pill px-4 py-2 social-btn"
+            data-bs-toggle="modal" data-bs-target="#uploadPhoto">
+            <img src="svg/plusblack.svg" alt="Plus" style="width:24px; height:24px;" class="me-3" />
+            <span class="">Ajouter des photos</span>
+        </button>
+    </div>
+
+
+    <div class="modal fade" id="uploadPhoto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-auto">
+                            <img id="myImage" , style="width: 30vw;">
+                        </div>
+                        <div class="col" style="font-family: 'Stem-Light', sans-serif; font-size: large;">
+                            <div class="row pt-4">
+                                <div class="col text-center">
+                                    <button type="button" class="btn btn-secondary" onclick="openCamera('camera')">Prendre
+                                        une photo</button>
+                                </div>
+                            </div>
+
+                            <div class="row pt-4">
+                                <div class="col text-center">
+                                    <button type="button" class="btn btn-secondary" onclick="openCamera('album')">Utiliser
+                                        une photo de sa galerie</button>
+                                </div>
+                            </div>
+
+                            <div class="row pt-4">
+                                <div class="col text-center">
+                                    <button type="button" class="btn" style="background-color: #b8334c; color:white" onclick="uploadImg()">Uploader la
+                                        photo</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="searchLocation" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="search-bar">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Par une recherche..."
+                                    aria-label="Search" aria-describedby="search-addon">
+                                <button class="btn btn-outline-secondary" type="button" id="search-addon">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    </br>
+                    <p class="text-center">ou</p>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-primary">Sélectionner sur la carte</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="searchLocation2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="search-bar">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Par une recherche..."
+                                    aria-label="Search" aria-describedby="search-addon" id="search-input">
+                                <button class="btn btn-outline-secondary" type="button" id="search-button">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    </br>
+                    <div id="geocoding-map" style="width: 100%; height:40vh; z-index:1;"> </div>
+                    </br>
+
+                    <div class="row justify-content-around">
+                        <div class="col-4">
+                            <button type="button" class="btn btn-primary w-100 text-center"
+                                id="clear">Supprimer</button>
+                        </div>
+                        <div class="col-4">
+                            <button type="button" class="btn btn-primary w-100 text-center" id="valider"
+                                data-bs-dismiss="modal" data-bs-target="#my-modal" aria-label="Close">Valider</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal" id="closeButtonTrigger" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Retourner à l'accueil</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Etes vous sûr de vouloir quitter ? Vos modifications ne seront pas sauvegardées.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="returnHome">Retourner à
+                        l'accueil</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="saveButtonTrigger" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Enregistrer le voyage</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Souhaitez-vous enregistrer les éléments de votre voyage ? Les modifications ne seront plus
+                        possibles.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                        id="saveChanges">Sauvegarder</button>
+                </div>
+            </div>
+        </div>
+    </div>

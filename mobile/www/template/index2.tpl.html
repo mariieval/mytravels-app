@@ -1,0 +1,21 @@
+<div id="barre_de_recherche" class="barre_recherche">
+    <form class="d-flex my-2 my-lg-0" class="barre_recherche">
+        <input class="form-control me-2" type="search" placeholder="trouvez des photos" aria-label="Search"class="barre_recherche"></input>
+        <button class="btn btn-outline-success" type="submit">rechercher</button>
+    </form>
+</div> 
+<div id="liste_de_photos" style="height : 50%">
+    <div class="wrapper"> <!--la classe wrapper, avec la définition dans le css, nous donne le côté grille-->
+        {{#titre}}
+        <div id="photo" class="card">
+<!-- à l'avenir (case rendre beau) on lui donne une classe et dans le css on met de quoi lui donner un style -->
+            <img src="img/"+{{lien}}>
+            <div class="card-body">
+            <p class="card-text">{{lieu}}</p><!-- à l'avenir si on clique sur le lieu ça se met sur l'album du lieu-->
+             </div>
+        </div>
+        {{/titre}}
+    </div>
+</div>
+<!--On va réessayer en faisant une boucle mustache sur les adresses des photos-->
+<!--pas sûr que ça marche comme ça-->

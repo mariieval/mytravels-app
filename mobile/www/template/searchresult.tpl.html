@@ -1,0 +1,13 @@
+<h2 class="mb-3">Voyages à découvrir</h2>
+<div id="results-container" class="results-scroll">
+    {{#.}}
+    <div class="travel-results" data-code={{code}}>
+        <img src="{{photos.0.text}}{{^photos.0.text}}img/default.jpeg{{/photos.0.text}}" alt={{title}}>
+        <div class="travel-results-title">{{title}}</div>
+    </div>
+    {{/.}}
+    <div class="travel-results" id="no-results-message2">
+        <img src="img/default.jpeg" alt="">
+        <div class="travel-results-title">Aucun résultat. Essaye de bouger la carte !</div>
+    </div>
+</div>

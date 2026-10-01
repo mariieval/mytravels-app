@@ -1,0 +1,71 @@
+<div id="register-page" class="darkpink-bg">
+    <div class="d-flex justify-content-center min-vh-100">
+        <div class="d-flex flex-column justify-content-center w-100" style="max-width: 30rem; margin:1rem">
+            <div class="titre" style="font-size: xx-large">Créer un compte</div>
+            <div class="card mb-3">
+                <div class="card-body stem-light darkpink">
+                    <div>
+                        <div class="mb-3">
+                            <label for="Username" class="form-label">Pseudo</label>
+                            <input type="username" class="form-control" id="inputUsername">
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputEmail" class="form-label">Adresse mail</label>
+                            <input type="email" class="form-control" id="inputEmail"
+                                aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputPassword" class="form-label">Mot de passe</label>
+                            <input type="password" class="form-control" id="inputPassword">
+                        </div>
+                        <div class="mb-3">
+                            <label for="checkPassword" class="form-label">Répétez le mot de passe</label>
+                            <input type="password" class="form-control" id="checkPassword">
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="button" class="btn btn-secondary" id="registerButton">Créer un compte</button>
+                        </div>
+                        <div>
+                            </br>
+                            Déjà membre ? <a href="#login">Connectez-vous</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="error" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Erreur</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="modal-body-error">
+        <div id="errorMessage">{{error}}</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="success" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Inscription réussie</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Bienvenue !
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>

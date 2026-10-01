@@ -1,0 +1,55 @@
+<div class="page-header">
+    <div class="titre">
+        <h1>Mes voyages</h1>
+    </div>
+    <div class="info">
+        <p>Consulte et modifie tes voyages</p>
+    </div>
+</div>
+
+
+{{#.}}
+
+<div class="container-fluid travel-card" data-code={{code}}>
+    <div class="row">
+        <div class="col-md-5">
+            <div id="carouselPhotos{{code}}" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    {{#photos}}
+                    <div class="carousel-item {{#isFirst}}active{{/isFirst}}">
+                        <img src={{text}} class="d-block w-100" alt="...">
+                    </div>
+                    {{/photos}}
+
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselPhotos{{code}}"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselPhotos{{code}}"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+        </div>
+        <div class="col-md-7 d-flex flex-column justify-content-center p-4">
+            <h1>{{title}}</h1>
+            <h2>{{summary}}</h2>
+            <br>
+            <div class="footer">
+                <p class="date">Créé le {{date}} par {{user}}<p></p>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+{{/.}}
+
+<a href="#add" class="float">
+    <img src="svg/plus.svg" alt="Add" class="my-float" style="color:white"/>
+</a>
